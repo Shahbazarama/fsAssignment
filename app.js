@@ -16,13 +16,22 @@ console.log(fs.readFileSync(path.join('.','challenge1', 'info.txt')).toString())
 // fs.renameSync(path.join('.', 'challenge3', 'binfo.txt'), path.join('.', 'challenge3', 'info.txt'))
 
 // Challenge 4
-//
+
 // fs.mkdirSync(path.join('.', 'challenge4', 'copyfolder'))
 // fs.copyFileSync(path.join('.', 'challenge4', 'info.txt'), path.join('.', 'challenge4', 'copyfolder', 'info.txt'))
 
 // Challenge 5
 
-let oldString = fs.readFileSync(path.join('.', 'challenge5', 'info.txt')).toString()
-oldString = oldString.replace(/-/g, ' ')
-fs.writeFileSync(path.join('.', 'challenge5', 'info.txt'), oldString)
+// let oldString = fs.readFileSync(path.join('.', 'challenge5', 'info.txt')).toString()
+// oldString = oldString.replace(/-/g, ' ')
+// fs.writeFileSync(path.join('.', 'challenge5', 'info.txt'), oldString)
+
 // Challenge 6
+
+let directory = fs.readdirSync(path.join(__dirname, 'challenge6'))
+
+directory.forEach(function(fileName){
+  if(fileName.includes('.txt')){
+    console.log(fs.readFileSync(path.join(__dirname, 'challenge6', fileName)).toString())
+  }
+})
